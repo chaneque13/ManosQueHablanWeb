@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Estilos base personalizados */
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+/* Clases personalizadas */
+@layer components {
+  .btn-primary {
+    @apply bg-purple-600 text-white px-6 py-3 rounded-full font-semibold 
+           hover:bg-purple-700 transition-all duration-300 
+           transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-purple-600 text-purple-600 px-6 py-3 
+           rounded-full font-semibold hover:bg-purple-50 
+           transition-all duration-300;
+  }
+  
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
